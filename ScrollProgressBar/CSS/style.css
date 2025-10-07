@@ -1,0 +1,119 @@
+      :root {
+          --progress-height: 6px;
+          --progress-accent: #00d4ff;
+          --bg1: 210;
+          --bg2: 260;
+      }
+
+      * {
+          box-sizing: border-box
+      }
+
+      html,
+      body {
+          height: 100%;
+          margin: 0;
+          font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial
+      }
+
+      body {
+          min-height: 200vh;
+          transition: background 400ms linear;
+          background: linear-gradient(180deg,
+                  hsl(var(--bg1), 60%, 12%),
+                  hsl(var(--bg2), 60%, 16%));
+          color: #e6eef8;
+      }
+
+      .progress-wrap {
+          position: fixed;
+          left: 0;
+          right: 0;
+          top: 0;
+          height: var(--progress-height);
+          background: rgba(255, 255, 255, 0.04);
+          z-index: 9999;
+          pointer-events: none;
+      }
+
+      .progress {
+          height: 100%;
+          width: 100%;
+          transform-origin: left center;
+          transform: scaleX(0);
+          will-change: transform;
+          background: linear-gradient(90deg, var(--progress-accent), #6aa8ff);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) inset;
+      }
+
+
+      .header {
+          position: fixed;
+          left: 50%;
+          transform: translateX(-50%);
+          top: 12px;
+          z-index: 9998;
+          background: rgba(0, 0, 0, 0.35);
+          padding: 6px 12px;
+          border-radius: 999px;
+          font-weight: 700;
+          color: white;
+          backdrop-filter: blur(6px);
+          pointer-events: auto;
+      }
+
+      .pct-bubble {
+          position: fixed;
+          right: 18px;
+          bottom: 18px;
+          z-index: 9998;
+          background: rgba(0, 0, 0, 0.5);
+          color: #fff;
+          padding: 8px 12px;
+          border-radius: 10px;
+          font-weight: 600;
+          font-size: 14px;
+      }
+
+      main {
+          padding: 120px 20px 40px;
+          max-width: 1000px;
+          margin: 0 auto;
+      }
+
+      .section {
+          background: rgba(255, 255, 255, 0.02);
+          padding: 36px;
+          border-radius: 12px;
+          margin-bottom: 20px;
+          line-height: 1.6;
+      }
+
+      .section a {
+          text-decoration: none;
+          color: #6aa8ff;
+          font-weight: bold;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+          .progress {
+              transition: none;
+          }
+
+          body {
+              transition: none;
+          }
+      }
+
+
+      @media (max-width:480px) {
+          :root {
+              --progress-height: 4px;
+          }
+
+          .header {
+              font-size: 14px;
+              padding: 6px 10px;
+              top: 8px;
+          }
+      }

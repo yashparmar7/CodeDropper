@@ -10,16 +10,38 @@ svg {
     display: block;
 }
 
-h2 {
+/* Move the h2 text to bottom center */
+h3 {
     color: white;
     font-family: sans-serif;
-    opacity: .4;
+    opacity: 0.6;
     font-size: 20px;
     position: fixed;
-    top: 15px;
-    left: 20px;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
     text-transform: uppercase;
     letter-spacing: 4px;
     z-index: 9999;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.logo-container {
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 9999;
+}
+
+.logo-container h2 {
+    color: white;
+    font-family: sans-serif;
+    opacity: 0.8;
+    font-size: 20px;
+    margin-top: 8px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
     text-shadow: 1px 1px 2px #000;
 }
